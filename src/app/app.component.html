@@ -24,9 +24,9 @@
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         <div class="col"  *ngFor="let data of listPerson">  
           <app-card-like           
-                          (click)="increment()" 
-                          [data]="data"></app-card-like>
-                
+            (countLike)="countLikeHandler()" 
+            [dataCard]="data">
+          </app-card-like>    
         </div>
       </div>
     </div>

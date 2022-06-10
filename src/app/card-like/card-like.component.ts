@@ -1,44 +1,25 @@
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { DataCard} from './card-data.interface';
+
 
 @Component({
   selector: 'app-card-like',
   templateUrl: './card-like.component.html',
   styleUrls: ['./card-like.component.css']
 })
-export class CardLikeComponent implements OnInit {
-@Input() data: {
-  index: number;
-  picture: string;
-  age: number;
-  name: string;
-  company: string;
-  phone: string;
-  address: string;
-  like : number;
-};
+export class CardLikeComponent {
 
-@Output() likeChecked = new EventEmitter<number>();
+    @Input() dataCard: DataCard;
 
-  triggerLike(data: {
-    index: number;
-    picture: string;
-    age: number;
-    name: string;
-    company: string;
-    phone: string;
-    address: string;
-    like : number;
-  }) {
-    this.data.like ++;
-    this.likeChecked.emit(this.data.like);
-    // this.likeChecked.emit(data);
+    @Output() likeChecked = new EventEmitter<number>();
+
+    triggerLike() {
+        this.dataCard.like++;
+        this.likeChecked.emit(this.dataCard.like);
+
+
+
   }
-
-  
-      
-      constructor() { }
-      
-      ngOnInit(): void {}
 }
 
 

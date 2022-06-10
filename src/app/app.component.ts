@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataCard} from './card-like/card-data.interface';
 
 
 @Component({
@@ -13,7 +14,7 @@ export class AppComponent {
   
 
   
-  listPerson = [
+  listPerson : DataCard[] = [
     {
       "index": 1,
       "picture": "https://picsum.photos/200?random=1",
@@ -23,6 +24,8 @@ export class AppComponent {
       "phone": "+62 (938) 581-2473",
       "address": "739 Dewey Place, Deputy, Ohio, 2479",
       "like": 0
+
+     
     },
     {
       "index": 2,
@@ -182,7 +185,7 @@ export class AppComponent {
   ];
   deffLike = 0;
 
-  increment(){
+  countLikeHandler(){
     this.deffLike++;
   }
  
